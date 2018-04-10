@@ -1,0 +1,31 @@
+{
+  "name": "hapi-cacher",
+  "version": "1.0.0",
+  "description": "An API caching module for preserving API results for later",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KinoAR/hapi-cacher.git"
+  },
+  "keywords": [
+    "api",
+    "cache",
+    "hapi-cacher",
+    "hapi",
+    "cacher",
+    "promises",
+    "javascript"
+  ],
+  "author": "Kino Rose",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KinoAR/hapi-cacher/issues"
+  },
+  "homepage": "https://github.com/KinoAR/hapi-cacher#readme",
+  "dependencies": {
+    "moment": "^2.22.0"
+  }
+}
