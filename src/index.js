@@ -1,15 +1,14 @@
 const time = require("./time");
 module.exports = {
   RESULTS:{},
-  get(url, type='cached', duration='24h') {
+  get(url, duration='24h') {
     const cachedResult = this.RESULTS[url];
-    if (cachedResult !== undefined && cachedResult.type === 'cached'
+    if (cachedResult !== undefined
     && !time.isOverTimeLimit(cachedResult.timestamp, cachedResult.duration)) {
       return Promise.resolve(this.RESULTS[url].result);
     }
     else {
       return new Promise((resolve, reject) => {
-        console.log("New Promise");
         const protocol = /https/.test(url)
           ? require('https') : require('http');
         protocol.get(url, (res) => {
@@ -18,7 +17,6 @@ module.exports = {
           res.on('data', (chunk) => {
             data += chunk;
           });
-
           res.on('end', () => {
             const result = JSON.parse(data);
             /* Catalogs the results into results. 
@@ -29,7 +27,6 @@ module.exports = {
             */
             this.RESULTS[url] = {
               timestamp: Date.now(),
-              type: type,
               duration: duration,
               result
             };
