@@ -27,3 +27,5 @@ hapi.get('https://api.chucknorris.io/jokes/random', '24hours')
    console.log(value);
  });
 ```
+
+The duration determines how long before the cached value is updated. Once you set a duration, you can forget about it in future API calls with the same url, and call the function with just the url.
