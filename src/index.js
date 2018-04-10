@@ -25,16 +25,10 @@ module.exports = {
             * duration: Difference in time (now vs timestamp) before the API 
             * request gets updated.
             */
-           if(this.RESULTS[url] !== undefined) {
-             const originalResult = this.RESULTS[url];
-             originalResult.result = result;
-            //  originalResult.duration = originalResult.duration !== duration ? duration : originalResult.duration;
-           } else {
              this.RESULTS[url] = {
                timestamp: Date.now(),
                duration: duration,
                result
-             };
            }
             resolve(result);
           });
